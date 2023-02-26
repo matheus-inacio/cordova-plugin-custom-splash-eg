@@ -6,6 +6,10 @@
     <author>Matheus Medeiros</author>
     <keywords>cordova,ionic,android,window background,color,background,window,theme,styles.xml</keywords>
     <repo>https://github.com/matheus-inacio/cordova-plugin-custom-splash-eg.git</repo>
+    
+    <js-module src="www/Empty.js" name="Empty">
+        <clobbers target="cordova.plugins.eg" />
+    </js-module>
 
     <platform name="android">
         <preference name="WINDOW_BACKGROUND_COLOR" />
