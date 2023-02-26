@@ -4,7 +4,7 @@
   "description": "Plugin to set Android window background for Cordova/Ionic applications",
   "repository": {
     "type": "git",
-    "url": "git:///github.com/matheus-inacio/cordova-plugin-custom-splash-eg.git"
+    "url": "git://github.com/matheus-inacio/cordova-plugin-custom-splash-eg.git"
   },
   "keywords": [
     "cordova",
