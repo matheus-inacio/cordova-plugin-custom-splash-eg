@@ -5,30 +5,30 @@
     <license>MIT</license>
     <author>Matheus Medeiros</author>
     <keywords>cordova,ionic,android,window background,color,background,window,theme,styles.xml</keywords>
+    <repo>https://github.com/matheus-inacio/cordova-plugin-custom-splash-eg.git</repo>
 
-	<platform name="android">
-		<preference name="WINDOW_BACKGROUND_COLOR" />
+    <platform name="android">
+        <preference name="WINDOW_BACKGROUND_COLOR" />
+            <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
+                <activity android:name="MainActivity" android:theme="@style/AppTheme"/>
+            </edit-config>
 
-		<edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="merge">
-			<activity android:name="MainActivity" android:theme="@style/AppTheme"/>
-		</edit-config>
+            <source-file src="cordova-window-background-strings.xml" target-dir="app/src/main/res/values" />
+            <source-file src="cordova-window-background-styles.xml" target-dir="app/src/main/res/values" />
 
-		<source-file src="cordova-window-background-strings.xml" target-dir="app/src/main/res/values" />
-		<source-file src="cordova-window-background-styles.xml" target-dir="app/src/main/res/values" />
+            <config-file target="app/src/main/res/values/cordova-window-background-strings.xml" parent="/*">
+                <color name="cordova_window_background">$WINDOW_BACKGROUND_COLOR</color>
+            </config-file>
 
-		<config-file target="app/src/main/res/values/cordova-window-background-strings.xml" parent="/*">
-			<color name="cordova_window_background">$WINDOW_BACKGROUND_COLOR</color>
-		</config-file>
-
-		<config-file target="app/src/main/res/values/cordova-window-background-styles.xml" parent="/*">
-			<style name="AppTheme" parent="@android:style/Theme.Light.NoTitleBar">
-			    <item name="android:background">@drawable/screen</item>
-			    <item name="android:windowDrawsSystemBarBackgrounds">true</item>    
-			    <item name="android:statusBarColor">@color/cordova_window_background</item>
-			    <item name="android:windowLightStatusBar">false</item>
-			    <item name="android:navigationBarColor">@color/cordova_window_background</item> 
-			    <item name="android:windowLightNavigationBar">true</item>
-			</style>
-		</config-file>
-	</platform>
+            <config-file target="app/src/main/res/values/cordova-window-background-styles.xml" parent="/*">
+                <style name="AppTheme" parent="@android:style/Theme.Light.NoTitleBar">
+                    <item name="android:background">@drawable/screen</item>
+                    <item name="android:windowDrawsSystemBarBackgrounds">true</item>    
+                    <item name="android:statusBarColor">@color/cordova_window_background</item>
+                    <item name="android:windowLightStatusBar">false</item>
+                    <item name="android:navigationBarColor">@color/cordova_window_background</item> 
+                    <item name="android:windowLightNavigationBar">true</item>
+                </style>
+            </config-file>
+    </platform>
 </plugin>
